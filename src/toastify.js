@@ -246,11 +246,10 @@
         var x = getAxisOffsetAValue("x", this.options);
         var y = getAxisOffsetAValue("y", this.options);
 
-        var xOffset = this.options.position == "left" ? x : "-" + x;
-        var yOffset = this.options.gravity == "toastify-top" ? y : "-" + y;
+        var xOffset = this.options.position == "left" ? x : `calc(-1 * ${x})`;
+        var yOffset = this.options.gravity == "toastify-top" ? y : `calc(-1 * ${y})`;
 
         divElement.style.transform = "translate(" + xOffset + "," + yOffset + ")";
-
       }
 
       // Returning the generated element

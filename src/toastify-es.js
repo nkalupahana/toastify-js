@@ -323,11 +323,10 @@ class Toastify {
         const x = this._getAxisOffsetAValue("x", this.options);
         const y = this._getAxisOffsetAValue("y", this.options);
 
-        const xOffset = this.options.position == "left" ? x : `-${x}`;
-        const yOffset = this.options.gravity == "toastify-top" ? y : `-${y}`;
+        var xOffset = this.options.position == "left" ? x : `calc(-1 * ${x})`;
+        var yOffset = this.options.gravity == "toastify-top" ? y : `calc(-1 * ${y})`;
 
         divElement.style.transform = `translate(${xOffset},${yOffset})`;
-
       }
 
       // Returning the generated element
